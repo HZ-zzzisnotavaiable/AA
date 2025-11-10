@@ -9,7 +9,12 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; line-height: 1.6; }
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg); color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  line-height: 1.6;
+}
 
 /* Layout: sticky TOC on the left, content on the right */
 .toc {
@@ -36,6 +41,17 @@ h2 { scroll-margin-top: 1rem; font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); c
 
 a { color: var(--link); }
 a:visited { color: #b4e9ff; }
+
+figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
 
 .site-footer { max-width: var(--maxw); margin: 3rem auto 2rem; color: var(--muted); text-align: center; }
 

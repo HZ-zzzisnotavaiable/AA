@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lights Out — Demo Puzzle Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Lights Out</h1>
+    <p class="tagline">Click tiles to toggle them and their neighbors. Turn <strong>all</strong> tiles off.</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls card">
+      <h2>Controls</h2>
+      <div class="row">
+        <label for="size">Board size</label>
+        <select id="size">
+          <option value="3">3 × 3 (Easy)</option>
+          <option value="4">4 × 4</option>
+          <option value="5" selected>5 × 5 (Classic)</option>
+          <option value="6">6 × 6</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="randomness">Random moves</label>
+        <input id="randomness" type="range" min="3" max="30" value="14" />
+        <span id="randomnessLabel">14</span>
+      </div>
+      <div class="buttons">
+        <button id="newGame">New Puzzle</button>
+        <button id="resetGame" class="secondary">Reset</button>
+      </div>
+
+      <div class="stats">
+        <div><span class="label">Moves</span><span id="moves">0</span></div>
+        <div><span class="label">Time</span><span id="time">00:00</span></div>
+      </div>
+      <details class="howto">
+        <summary>How to play</summary>
+        <p>Click a tile. It toggles (on/off) itself and the four neighbors (up, down, left, right). Your goal: make every tile dark.</p>
+        <p>Hit <strong>New Puzzle</strong> for a fresh randomized board. <strong>Reset</strong> restarts the current puzzle.</p>
+      </details>
+    </section>
+
+    <section class="board card">
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="winDialog">
+    <h2>🎉 You solved it!</h2>
+    <p><span id="finalMoves">0</span> moves • <span id="finalTime">00:00</span></p>
+    <div class="buttons">
+      <button id="playAgain">Play again</button>
+      <button id="shareLink" class="secondary">Copy share link</button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <p>Made with ❤ — <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages</a> demo</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
